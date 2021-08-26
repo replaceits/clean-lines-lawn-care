@@ -16,7 +16,7 @@ class ScrollToTop extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.location.key !== prevProps.location.key) {
-      this.state.scrollToTop()
+      this.scrollToTop()
     }
   }
 

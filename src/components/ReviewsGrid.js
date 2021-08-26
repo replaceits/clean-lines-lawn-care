@@ -16,7 +16,7 @@ class ReviewsGrid extends React.Component {
   }
 
   static defaultProps = {
-    itemsPerPage: 2,
+    itemsPerPage: 10,
     enablePages: false
   }
 
