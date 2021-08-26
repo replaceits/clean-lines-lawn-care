@@ -14,38 +14,43 @@ class ReviewForm extends React.Component {
   onSubmitClicked(event, submit) {
     event.preventDefault();
 
-    submit(this.state);
+    submit({
+      ...this.state
+    });
   }
 
-  handleChange = event => {
+  handleChange = (event, setValue) => {
+    const {name, value} = event.target;
+
     this.setState({
-      [event.target.name]: event.target.value
+      [name]: value
     });
+
+    setValue(name, value);
   }
 
   render() {
     return (
       <Form name='review'>
-        {({submit}) => (
+        {({submit, setValue}) => (
           <React.Fragment>
-            <input type="hidden" name="form-name" value="review" />
             <h2>Write a review</h2>
             <input
               type='text' 
               name='name' 
               placeholder='Name' 
-              onChange={this.handleChange}
+              onChange={event => this.handleChange(event, setValue)}
             />
             <input 
               type='email' 
               name='email' 
               placeholder='Email' 
-              onChange={this.handleChange}
+              onChange={event => this.handleChange(event, setValue)}
             />
             <textarea
               name='content'
               placeholder='Write your review...' 
-              onChange={this.handleChange}
+              onChange={event => this.handleChange(event, setValue)}
             />
             <button type="submit" onClick={event => this.onSubmitClicked(event, submit)}>Write Review</button>
           </React.Fragment>

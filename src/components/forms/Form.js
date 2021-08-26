@@ -8,7 +8,20 @@ import './Form.scss';
 
 class Form extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+  }
+
+  state = {
+    values: {}
+  }
+
+  setValue = (name, value) => {
+    this.setState(({values}) => ({
+      values: {
+        ...values,
+        [name]: value
+      }
+    }));
   }
 
   encode(data) {
@@ -17,17 +30,17 @@ class Form extends React.Component {
         .join("&")
   }
 
-  submit = (data) => {
+  submit = () => {
     fetch('/post/review', {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({
         'form-name': this.props.name,
-        ...data
+        ...this.state.values
       })
     }).then(res => {
       if (!res.ok) throw new Error('Invalid form submission');
-      
+
       this.props.history.push(Path.join(this.props.location.pathname, 'success'))
     }).catch(error => {
       this.props.history.push(Path.join(this.props.location.pathname, 'error'))
@@ -40,8 +53,10 @@ class Form extends React.Component {
         name={this.props.name}
         className='form' 
         data-netlify='true'
+        onSubmit={this.submit}
       >
-        {this.props.children({submit: this.submit})}
+        <input type="hidden" name="form-name" value={this.props.name} />
+        {this.props.children({submit: this.submit, setValue: this.setValue})}
       </form>
     );
   }
