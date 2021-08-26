@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
 
@@ -12,6 +12,7 @@ import Gallery from './components/pages/Gallery';
 import Home from './components/pages/Home';
 import Reviews from './components/pages/Reviews';
 import Services from './components/pages/Services';
+import FourOhFour from './components/pages/FourOhFour';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
                 <Route path='/contact-us' component={ContactUs} />
                 <Route path='/free-estimate' component={FreeEstimate} />
                 <Route path='/services' component={Services} />
+                <Route path='/404' component={FourOhFour} />
+                <Redirect to='/404' />
               </Switch>
             
               <Footer />
