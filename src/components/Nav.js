@@ -9,6 +9,11 @@ class Nav extends React.Component {
     return (
       <div className='nav'>
         <div className='nav-title'>
+          <img 
+            className='nav-title-logo' 
+            src='https://cleanlineslawncare.s3.amazonaws.com/oldimages/logo.png'
+            alt='Clean Lines Lawn Care Logo'
+          />
           <Link to='/' className='no-style'>Clean Lines Lawn Care</Link>
         </div>
         <ul className='nav-options no-style'>

@@ -1,0 +1,27 @@
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 440px;
+  width: 100%;
+
+  background-image: url('https://cleanlineslawncare.s3.us-east-1.amazonaws.com/image000001.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.home-header-overlay {
+  padding: 30px 280px;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  color: #FFFFFF;
+
+  font-size: 36px;
+  font-weight: 700;
+
+  text-align: center;
+}

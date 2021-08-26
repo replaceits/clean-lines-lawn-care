@@ -1,0 +1,41 @@
+
+.row-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 10px 0;
+
+  margin-bottom: 50px;
+
+  background: #60C26D;
+
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.row-button-button {
+  display: flex;
+  align-items: flex-end;
+
+  margin: 0;
+  padding: 20px;
+
+  background: #56AD62;
+
+	border: none;
+  border-radius: 10px;
+	
+	font: inherit;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+
+	cursor: pointer;
+	outline: inherit;
+
+  color: #FFFFFF;
+
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
