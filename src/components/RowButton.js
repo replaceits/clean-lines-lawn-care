@@ -30,7 +30,7 @@ class RowButton extends React.Component {
     } else if (this.props.href) {
       buttonLink = <a href={this.props.href} className='no-style'>{userButton}</a>;
     } else {
-      buttonLink = <button onClick={this.props.onClick} className='no-style'>{userButton}</button>
+      buttonLink = <div onClick={this.props.onClick} className='no-style'>{userButton}</div>
     }
 
     return (
