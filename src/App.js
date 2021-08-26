@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
 
+import Footer from './components/Footer';
 import Nav from './components/Nav';
+
 import ContactUs from './components/pages/ContactUs';
 import FreeEstimate from './components/pages/FreeEstimate';
 import Gallery from './components/pages/Gallery';
@@ -24,6 +26,7 @@ function App() {
           <Route path='/free-estimate' component={FreeEstimate} />
           <Route path='/services' component={Services} />
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );
