@@ -23,13 +23,19 @@ class RowButton extends React.Component {
       </button>
     );
 
+    let buttonLink = null;
+
+    if (this.props.to) {
+      buttonLink = <Link to={this.props.to} className='no-style'>{userButton}</Link>;
+    } else if (this.props.href) {
+      buttonLink = <a href={this.props.href} className='no-style'>{userButton}</a>;
+    } else {
+      buttonLink = <button onClick={this.props.onClick} className='no-style'>{userButton}</button>
+    }
+
     return (
       <div className={`row-button ${this.props.noBG ? 'noBG' : ''}`}>
-        {
-          this.props.to
-            ? <Link to={this.props.to} className='no-style'>{userButton}</Link>
-            : <a href={this.props.href} className='no-style'>{userButton}</a>
-        }
+        {buttonLink}
       </div>
     )
   }
