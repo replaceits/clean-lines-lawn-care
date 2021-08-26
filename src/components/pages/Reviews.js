@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import ReviewForm from '../forms/ReviewForm';
 import ReviewsGrid from '../ReviewsGrid';
@@ -12,17 +12,31 @@ class Reviews extends React.Component {
   render() {
     return (
       <div className='page page-reviews'>
-        <Route exact path='/reviews'>
-          <ReviewsGrid enablePages />
-          <RowButton to='/reviews/new' noBG>Write a review</RowButton>
-        </Route>
+        <Switch>
+          <Route exact path='/reviews'>
+            <ReviewsGrid enablePages />
+            <RowButton noBG to='/reviews/new'>Write a review</RowButton>
+          </Route>
 
-        <Route exact path='/reviews/new'>
-          <ReviewForm />
-        </Route>
+          <Route exact path='/reviews/new'>
+            <ReviewForm />
+          </Route>
+
+          <Route path='/reviews/new/success'>
+            {this.props.history.action !== 'PUSH' ? <Redirect to='/reviews' /> : null}
+            Success
+          </Route>
+
+          <Route path='/reviews/new/error'>
+            {this.props.history.action !== 'PUSH' ? <Redirect to='/reviews' /> : null}
+            Something went wrong
+          </Route>
+
+          <Redirect to="/reviews" />
+        </Switch>
       </div>
     )
   }
 }
 
-export default Reviews;
+export default withRouter(Reviews);

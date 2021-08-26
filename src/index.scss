@@ -18,6 +18,25 @@ code {
     monospace;
 }
 
+input, textarea {
+  margin: 10px;
+  padding: 10px;
+
+  background-image: none;
+  background-color: transparent;
+
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+
+  box-shadow: none;
+
+  font: inherit;
+}
+
+textarea {
+  height: 100px;
+}
+
 a.no-style {
   &, &:link, &:visited {
     text-decoration: inherit;

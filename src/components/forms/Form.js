@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import Path from 'path';
 
 import './Form.scss';
@@ -41,9 +41,9 @@ class Form extends React.Component {
     }).then(res => {
       if (!res.ok) throw new Error('Invalid form submission');
 
-      this.props.history.push(Path.join(this.props.location.pathname, 'success'))
+      this.props.history.push(Path.join(this.props.location.pathname, 'success'));
     }).catch(error => {
-      this.props.history.push(Path.join(this.props.location.pathname, 'error'))
+      this.props.history.push(Path.join(this.props.location.pathname, 'error'));
     })
   }
 
