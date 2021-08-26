@@ -26,7 +26,7 @@ class Services {
   }
 
   top(num, page = 0) {
-    return this.services.slice(page * num, num);
+    return this.services.slice(page * num, (page * num) + num);
   }
 }
 
