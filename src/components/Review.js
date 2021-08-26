@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaStar, FaRegStar } from 'react-icons/fa';
+import { FaStar, FaRegStar, FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 import './Review.scss';
 
@@ -28,17 +28,21 @@ class Review extends React.Component {
     }
 
     return (
-      <div className='review'>
+      <li className='review'>
+        <div className='review-upper'>
+          <div className='review-stars'>
+            {stars}
+          </div>
+          <div className='review-author'>
+            {this.props.author}
+          </div>
+        </div>
         <div className='review-content'>
+          <FaQuoteLeft className='icon' />
           {this.props.content}
+          <FaQuoteRight className='icon' />
         </div>
-        <div className='review-stars'>
-          {stars}
-        </div>
-        <div className='review-author'>
-          -{this.props.author}
-        </div>
-      </div>
+      </li>
     )
   }
 }

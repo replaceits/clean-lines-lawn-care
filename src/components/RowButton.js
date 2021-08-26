@@ -6,7 +6,7 @@ import './RowButton.scss';
 
 class RowButton extends React.Component {
   render() {
-    const userButton = <button className='row-button-button'>{this.props.children}</button>;
+    const userButton = <button className='row-button-button no-style'>{this.props.children}</button>;
 
     return (
       <div className='row-button'>
