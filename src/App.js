@@ -6,6 +6,7 @@ import './App.scss';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 
+import Construction from './components/pages/Construction';
 import ContactUs from './components/pages/ContactUs';
 import FreeEstimate from './components/pages/FreeEstimate';
 import Gallery from './components/pages/Gallery';
@@ -25,6 +26,7 @@ function App() {
           <div id='app-content' className='app-content'>
             <ScrollToTop scrollId='app-content'>
               <Switch>
+                <Route path='/' component={Construction} />
                 <Route exact path='/' component={Home} />
                 <Route path='/reviews' component={Reviews} />
                 <Route path='/gallery' component={Gallery} />
