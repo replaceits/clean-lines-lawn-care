@@ -1,10 +1,12 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import Logo from './Logo';
+import ContactInfo from './ContactInfo';
 
 import './Footer.scss';
-import { Link } from 'react-router-dom';
-import { FaFacebookSquare } from 'react-icons/fa';
+
 
 class Footer extends React.Component {
   render() {
@@ -13,24 +15,7 @@ class Footer extends React.Component {
         <div className='footer-container'>
           <div className='footer-side'>
             <Logo />
-            <div className='footer-row'>
-              <div className='footer-item'>
-                7:30am - 6:00pm
-              </div>
-              <div className='footer-item'>
-                <a className='no-style' href='tel:4349819705'>(434) 981-9705</a>
-              </div>
-            </div>
-            <div className='footer-row'>
-              <div className='footer-item'>
-                <a 
-                  href='https://www.facebook.com/cleanlineslawncare'
-                  className='no-style icon'
-                >
-                  <FaFacebookSquare />
-                </a>
-              </div>
-            </div>
+            <ContactInfo />
           </div>
           <div className='footer-side links'>
             <div className='footer-links'>
