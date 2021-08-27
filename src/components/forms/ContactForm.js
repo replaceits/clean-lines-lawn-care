@@ -4,9 +4,10 @@ import RowButton from '../RowButton';
 import ExtendableForm from './ExtendableForm';
 import Form from './Form';
 
-import './ReviewForm.scss';
+import './ContactForm.scss';
+import ContactInfo from '../ContactInfo';
 
-class ReviewForm extends ExtendableForm {
+class ContactForm extends ExtendableForm {
   state = {
     name: '',
     email: '',
@@ -15,11 +16,20 @@ class ReviewForm extends ExtendableForm {
 
   render() {
     return (
-      <Form name='review'>
+      <Form name='contact'>
         {({submit, setValue}) => (
           <React.Fragment>
             <div className='input-wrapper'>
-              <h1 className='form-title'>Write a review</h1>
+              <h1 className='form-title'>Contact Us</h1>
+
+              <span className='bolden'>
+                <ContactInfo theme='blue' />
+              </span>
+
+              <span className='alternatively-wrapper'>
+                <h3 className='alternatively'>Alternatively</h3>
+              </span>
+
               <div className='input-container'>
                 <input
                   type='text' 
@@ -37,11 +47,11 @@ class ReviewForm extends ExtendableForm {
               <textarea
                 name='content'
                 className='submit-button'
-                placeholder='Write your review...' 
+                placeholder='Write your message...' 
                 onChange={event => this.handleChange(event, setValue)}
               />
               <RowButton noBG onClick={event => this.onSubmitClicked(event, submit)}>
-                Write Review
+                Write Contact
               </RowButton>
             </div>
           </React.Fragment>
@@ -51,4 +61,4 @@ class ReviewForm extends ExtendableForm {
   }
 }
 
-export default ReviewForm;
+export default ContactForm;

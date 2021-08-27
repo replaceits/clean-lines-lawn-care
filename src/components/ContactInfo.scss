@@ -1,0 +1,24 @@
+
+.contact-info {
+  width: 100%;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.contact-item {
+  margin-top: 18px;
+
+  a.icon {
+    font-size: 24px;
+  }
+}
+
+.contact-info.blue {
+  .contact-item a.icon {
+    color: #4267B2;
+  }
+}
