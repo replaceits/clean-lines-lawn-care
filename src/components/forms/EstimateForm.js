@@ -112,7 +112,7 @@ class EstimateForm extends ExtendableForm {
                 placeholder='Additional info...'
                 name='additional'
                 onChange={event => this.handleChange(event, setValue)}
-              />
+              ></textarea>
 
               <RowButton noBG onClick={event => this.onSubmitClicked(event, submit)}>
                 Get Free Estimate
