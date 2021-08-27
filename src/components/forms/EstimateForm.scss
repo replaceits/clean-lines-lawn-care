@@ -1,0 +1,9 @@
+
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    flex: 0 0 33.33%;
+  }
+}
