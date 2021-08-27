@@ -1,8 +1,10 @@
 
 import React from 'react';
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
+import { Route, Switch, Redirect, withRouter, Link } from 'react-router-dom';
 
 import ReviewForm from '../forms/ReviewForm';
+import MessageBox from '../MessageBox';
 import ReviewsGrid from '../ReviewsGrid';
 import RowButton from '../RowButton';
 
@@ -24,12 +26,30 @@ class Reviews extends React.Component {
 
           <Route path='/reviews/new/success'>
             {this.props.history.action !== 'PUSH' ? <Redirect to='/reviews' /> : null}
-            Success
+            <MessageBox 
+              icon={<FaCheckCircle />}
+              title='Your reviews been submitted!'
+              content={
+                <Link to='/' className='no-style'>
+                  Click here to return to the home page
+                </Link>
+              }
+              theme='success'
+            />
           </Route>
 
           <Route path='/reviews/new/error'>
             {this.props.history.action !== 'PUSH' ? <Redirect to='/reviews' /> : null}
-            Something went wrong
+            <MessageBox 
+              icon={<FaExclamationTriangle />}
+              title='Whoops, something went wrong.'
+              content={
+                <Link to='/reviews/new' className='no-style'>
+                  Please click here to submit your review again
+                </Link>
+              }
+              theme='error'
+            />
           </Route>
 
           <Redirect to="/reviews" />

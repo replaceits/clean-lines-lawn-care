@@ -1,0 +1,36 @@
+
+.message-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+
+  text-align: center;
+}
+
+.message-wrapper {
+  padding: 40px;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+}
+
+.message-icon {
+  font-size: 72px;
+}
+
+.error {
+  .message-icon {
+    color: #FF5555;
+  }
+}
+
+.success {
+  .message-icon {
+    color: #60C26D;
+  }
+}
