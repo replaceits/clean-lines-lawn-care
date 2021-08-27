@@ -18,7 +18,8 @@ class EstimateForm extends ExtendableForm {
     city: '',
     state: '',
     zip: '',
-    serviceslist: []
+    serviceslist: [],
+    additional: ''
   }
 
   render() {
@@ -63,7 +64,7 @@ class EstimateForm extends ExtendableForm {
               <input
                 type='text' 
                 name='streetTwo' 
-                placeholder='Street Address Line Two'
+                placeholder='Street Address Line 2'
                 onChange={event => this.handleChange(event, setValue)}
               />
 
@@ -106,6 +107,12 @@ class EstimateForm extends ExtendableForm {
                   </li>
                 ))}
               </ul>
+
+              <textarea 
+                placeholder='Additional info...'
+                name='additional'
+                onChange={event => this.handleChange(event, setValue)}
+              />
 
               <RowButton noBG onClick={event => this.onSubmitClicked(event, submit)}>
                 Get Free Estimate
