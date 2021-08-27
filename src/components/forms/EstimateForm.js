@@ -30,13 +30,13 @@ class EstimateForm extends ExtendableForm {
               <h1 className='form-title'>Get a <span className='bolden'>free</span> estimate!</h1>
 
               <h3 className='form-title'>Where can we contact you?</h3>
-              <div className='input-container'>
-                <input
+              <input
                   type='text' 
                   name='name' 
                   placeholder='Name'
                   onChange={event => this.handleChange(event, setValue)}
                 />
+              <div className='input-container'>
                 <input 
                   type='email' 
                   name='email' 

@@ -53,3 +53,24 @@
 
   text-align: center;
 }
+
+@media (max-width: 955px) {
+  .footer-container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media (max-width: 760px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+
+}

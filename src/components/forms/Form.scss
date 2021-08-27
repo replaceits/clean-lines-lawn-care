@@ -5,14 +5,14 @@
   align-items: center;
   flex-direction: column;
 
-  margin: 50px 0;
+  padding: 50px 25px;
 
   .input-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
   
-    width: 100%;
+    width: calc(100% - 50px);
     max-width: 750px;
 
     padding: 25px;
@@ -34,12 +34,22 @@
     justify-content: space-between;
   
     input, textarea {
-      width: 100%;
+      flex: 0 0 40%;
     }
   }
 
 
   .form-title {
     text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .input-container {
+    flex-direction: column;
+
+    input, textarea {
+      flex: 0 0 100%;
+    }
   }
 }

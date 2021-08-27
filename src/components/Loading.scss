@@ -25,3 +25,11 @@
     transform:rotate(360deg);
   }
 }
+
+@media (max-width: 955px) {
+  .loading {
+    margin: 25px 0;
+
+    font-size: 72px;
+  }
+}

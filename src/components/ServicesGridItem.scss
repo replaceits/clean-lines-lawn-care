@@ -32,3 +32,21 @@
   }
 }
 
+@media (max-width: 955px) {
+  .services-grid-item {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 650px) {
+  .services-grid-item {
+    flex: 0 0 50%;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .services-grid-item {
+    flex: 0 0 100%;
+  }
+}
