@@ -16,7 +16,7 @@ class ContactUs extends React.Component {
             {this.props.history.action !== 'PUSH' ? <Redirect to='/reviews' /> : null}
             <MessageBox 
               icon={<FaCheckCircle />}
-              title='Your reviews been submitted!'
+              title="We'll be in contact soon!"
               content={
                 <Link to='/' className='no-style'>
                   Click here to return to the home page
