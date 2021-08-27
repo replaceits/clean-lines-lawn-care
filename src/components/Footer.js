@@ -4,6 +4,7 @@ import Logo from './Logo';
 
 import './Footer.scss';
 import { Link } from 'react-router-dom';
+import { FaFacebookSquare } from 'react-icons/fa';
 
 class Footer extends React.Component {
   render() {
@@ -18,6 +19,16 @@ class Footer extends React.Component {
               </div>
               <div className='footer-item'>
                 <a className='no-style' href='tel:4349819705'>(434) 981-9705</a>
+              </div>
+            </div>
+            <div className='footer-row'>
+              <div className='footer-item'>
+                <a 
+                  href='https://www.facebook.com/cleanlineslawncare'
+                  className='no-style icon'
+                >
+                  <FaFacebookSquare />
+                </a>
               </div>
             </div>
           </div>
