@@ -7,6 +7,8 @@
   padding: 30px;
 
   margin-top: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
 
   border-radius: 4px;
 
@@ -52,4 +54,14 @@
   color: #FCD117;
 
   font-size: 24px;
+}
+
+@media (max-width: 500px) {
+  .review-upper {
+    flex-direction: column-reverse;
+  }
+  .review-author {
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
 }

@@ -32,3 +32,27 @@
     color: #60C26D;
   }
 }
+
+@media (max-width: 955px) {
+  .message-box {
+    margin: 25px;
+  }
+
+  .message-icon {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 500px) {
+  .message-icon {
+    font-size: 36px;
+  }
+
+  .message-title {
+    font-size: 18px;
+  }
+
+  .message-content {
+    font-size: 14px;
+  }
+}

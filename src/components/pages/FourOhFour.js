@@ -12,8 +12,8 @@ class FourOhFour extends React.Component {
         <div className='four-oh-four-wrapper'>
           <h1><FaQuestion className='icon' /></h1>
           <Link to='/' className='no-style'>
-            <h1>Whoops, we couldn't find that page</h1>
-            <h2>Click here to return home</h2>
+            <h1 className='title'>Whoops, we couldn't find that page</h1>
+            <h2 className='message'>Click here to return home</h2>
           </Link>
         </div>
       </div>

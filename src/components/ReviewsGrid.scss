@@ -12,11 +12,25 @@
 
 .reviews-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   width: 100%;
 }
 
 .reviews-container.right {
   margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+  .reviews-grid {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 750px) {
+  .reviews-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }

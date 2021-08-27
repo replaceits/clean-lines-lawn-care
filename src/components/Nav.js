@@ -1,18 +1,33 @@
 
 import React from 'react';
+import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 
 import './Nav.scss';
 
 class Nav extends React.Component {
+  state = {
+    navOpen: false
+  }
+
+  toggleNav = () => {
+    this.setState(({navOpen}) => ({navOpen: !navOpen}));
+  }
+
   render() {
     return (
       <div className='nav'>
         <div className='nav-title'>
           <Logo />
         </div>
-        <ul className='nav-options no-style'>
+        <button 
+          className='nav-mobile no-style'
+          onClick={this.toggleNav}
+        >
+          <FaBars />
+        </button>
+        <ul className={`nav-options no-style ${this.state.navOpen ? 'open' : ''}`}>
           <li>
             <NavLink 
               className='no-style' 

@@ -2,3 +2,9 @@
 .page-services {
   margin-top: 50px;
 }
+
+@media (max-width: 955px) {
+  .page-services {
+    margin-top: 25px;
+  }
+}

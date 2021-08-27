@@ -7,7 +7,6 @@ import './App.scss';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 
-import Construction from './components/pages/Construction';
 import ScrollToTop from './components/ScrollToTop';
 import Loading from './components/Loading';
 
@@ -29,7 +28,6 @@ function App() {
             <ScrollToTop scrollId='app-content'>
               <Suspense fallback={<Loading />}>
                 <Switch>
-                  <Route exact path='/' component={Construction} />
                   <Route exact path='/' component={Home} />
                   <Route path='/reviews' component={Reviews} />
                   <Route path='/gallery' component={Gallery} />
