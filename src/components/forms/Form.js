@@ -31,7 +31,7 @@ class Form extends React.Component {
   }
 
   submit = () => {
-    fetch('/post/review', {
+    fetch('/post/form-submission', {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({

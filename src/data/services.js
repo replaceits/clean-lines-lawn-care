@@ -26,6 +26,13 @@ class Services {
     ['Weeding', 'https://cleanlineslawncare.s3.us-east-1.amazonaws.com/oldimages/WeedingAfter.jpg'],
     ['Mowing', 'https://cleanlineslawncare.s3.us-east-1.amazonaws.com/oldimages/Mowing.jpg'],
     ['Mulching', 'https://cleanlineslawncare.s3.us-east-1.amazonaws.com/oldimages/Mulching1.jpg'],
+
+    ['New Installation', '#'],
+    ['Seeding Fertilizing', '#'],
+    ['Gutter Cleaning', '#'],
+    ['Leaf Removal', '#'],
+    ['Complete Lawn Service', '#'],
+    ['Snow Removal', '#']
   ]
 }
 
