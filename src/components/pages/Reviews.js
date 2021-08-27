@@ -16,7 +16,7 @@ class Reviews extends React.Component {
       <div className='page page-reviews'>
         <Switch>
           <Route exact path='/reviews'>
-            <ReviewsGrid enablePages />
+            <ReviewsGrid itemsPerPage={20} />
             <RowButton noBG to='/reviews/new'>Write a review</RowButton>
           </Route>
 

@@ -1,11 +1,14 @@
 
 import React from 'react';
+import ServicesGrid from '../ServicesGrid';
+
+import './Services.scss';
 
 class Services extends React.Component {
   render() {
     return (
       <div className='page page-services'>
-        Services
+        <ServicesGrid itemsPerPage={100} />
       </div>
     )
   }

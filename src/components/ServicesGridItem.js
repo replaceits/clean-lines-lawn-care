@@ -17,7 +17,7 @@ class ServicesGridItem extends React.Component {
         style={{backgroundImage: `url(${this.props.image})`}}
       >
         <div className='services-grid-item-overlay'>
-          &nbsp;{this.props.name}
+          {this.props.name}
         </div>
       </li>
     )

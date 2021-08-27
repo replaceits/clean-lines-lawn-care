@@ -22,16 +22,11 @@ class Reviews {
 
   static reviews = [
     ['Lisa Shiflett', 'Look no further for the BEST lawn service around! Reliable and quality work. Call Clean Lines Lawn Care and you won’t be disappointed!'],
-    ['John Deer', 'Well I done did my yard through this here service and I done darn am amazed by their work'],
-    ['Prince Rupert', 'I say my sir tis the finest yard!'],
-    ['Tom Stewart', 'This is by far the only yard service you will ever need'],
-    ['Bill Franks', 'I found my yard in spotless condition after a very lovily visit from the crew at Clean Lines Lawn Care'],
-    ['Lily Grace', 'Passed the vibe check'],
-    ['Alex Jefferson', '💯'],
-    ['Humphrey Murphy', 'Reliable and efficient'],
-    ['Derek Otterson', 'Cleared my pond of all debris and installed a new fountain'],
-    ['Zack Gilbert', 'Never had such fast service'],
-    ['Alice Breem', 'This is totally a legit review'],
+    ['George Hornsby', 'William Joel Christmas does fantastic yard work and is very reasonable and dependable. If you live in Lake Monticello or the surronding area, please give him a call, you won\'t be sorry you did.'],
+    ['Chuck Haislip', 'William makes sure that he leaves every customer happy. Clean lines lawn care is the best around.'],
+    ['Michael Robbins', 'Clean Lines took care of my yard a few weeks ago and did the sam. Better than if I did it myself! They take pride in the job they do. Very reasonable price.'],
+    ['Jessica Hall', 'You know who will come out and care for your yard, rain or shine this time of year? Williams Joel Christmas! This guy is such a hard worker... Highly recommend!!!!!'],
+    ['Shelly Quick', 'Exceptional, prompt service at a very reasonable price.\n\nJoey and his staff were lifesavers with my last minute snow removal request. They kept me informed with their ETA, provided excellent work in a very timely manner. I have hired them to maintain my property for the winters months. Thank you, Joey!'],
   ]
 }
 

@@ -22,7 +22,7 @@ class Home extends React.Component {
           <FaPhoneAlt />&nbsp;Call for a consultation! (434) 981-9705
         </RowButton>
 
-        <ServicesGrid />
+        <ServicesGrid itemsPerPage={6} />
 
         <RowButton to='/services'>
           See more services!&nbsp;<FaSeedling />
