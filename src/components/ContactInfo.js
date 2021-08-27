@@ -7,7 +7,7 @@ import './ContactInfo.scss';
 
 class ContactInfo extends React.Component {
   static propTypes = {
-    theme: PropTypes.oneOf('default', 'blue')
+    theme: PropTypes.oneOf(['default', 'blue'])
   }
 
   static defaultProps = {

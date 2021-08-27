@@ -1,0 +1,27 @@
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 100px 0;
+
+  font-size: 144px;
+
+  color: #60C26D;
+
+  .icon {
+    background: #FFF;
+
+    border-radius: 100%;
+    padding: 20px;
+
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}
