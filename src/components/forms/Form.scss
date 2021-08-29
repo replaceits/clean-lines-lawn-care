@@ -44,6 +44,18 @@
   }
 }
 
+@media (max-width: 955px) {
+  .form {
+    padding: 25px 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    padding: 10px 10px;
+  }
+}
+
 @media (max-width: 550px) {
   .input-container {
     flex-direction: column;
