@@ -9,6 +9,7 @@
   width: 100%;
 
   background-image: url('https://cleanlineslawncare.s3.us-east-1.amazonaws.com/image000001.jpg');
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -118,6 +119,14 @@
   
   .overview-item-content {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .overview {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 }
 

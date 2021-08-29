@@ -29,6 +29,10 @@
 }
 
 @media (max-width: 955px) {
+  .reviews-grid { 
+    margin-bottom: 25px;
+  }
+
   .reviews-container.right {
     margin-top: 25px;
   }
@@ -38,5 +42,14 @@
   .reviews-wrapper {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .reviews-grid { 
+    margin-bottom: 10px;
+  }
+  .reviews-container.right {
+    margin-top: 10px;
   }
 }

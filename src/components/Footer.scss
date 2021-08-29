@@ -72,5 +72,12 @@
 }
 
 @media (max-width: 500px) {
+  .footer-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
+  .footer-side.links {
+    padding-top: 20px;
+  }
 }

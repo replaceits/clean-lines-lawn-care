@@ -44,10 +44,20 @@
 }
 
 @media (max-width: 955px) {
+  .row-button { 
+    margin-bottom: 25px;
+  }
+
   .row-button-button {
     &, &.no-style {
       font-size: 18px;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .row-button {
+    margin-bottom: 10px;
   }
 }
 

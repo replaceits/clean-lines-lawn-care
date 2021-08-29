@@ -33,6 +33,7 @@ class Nav extends React.Component {
               className='no-style' 
               activeClassName='selected' 
               to='/reviews'
+              onClick={this.toggleNav}
             >
               Reviews
             </NavLink>
@@ -42,6 +43,7 @@ class Nav extends React.Component {
               className='no-style' 
               activeClassName='selected' 
               to='/gallery'
+              onClick={this.toggleNav}
             >
               Gallery
             </NavLink>
@@ -51,6 +53,7 @@ class Nav extends React.Component {
               className='no-style' 
               activeClassName='selected' 
               to='/contact-us'
+              onClick={this.toggleNav}
             >
               Contact Us
             </NavLink>
@@ -60,6 +63,7 @@ class Nav extends React.Component {
               className='no-style' 
               activeClassName='selected' 
               to='/free-estimate'
+              onClick={this.toggleNav}
             >
               Free Estimate
             </NavLink>
@@ -69,6 +73,7 @@ class Nav extends React.Component {
               className='no-style' 
               activeClassName='selected' 
               to='/services'
+              onClick={this.toggleNav}
             >
               Services
             </NavLink>
