@@ -1,32 +1,27 @@
 
 import React from 'react';
+
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { ScrollProvider } from '../contexts/scroll';
+import ScrollContext from '../contexts/scroll';
 
-class ScrollToTop extends React.Component {
-  static propTypes = {
-    scrollId: PropTypes.string.isRequired
-  }
+function ScrollToTop({scrollId, location, children}) {
+  const scrollToTop = React.useCallback(() => document.getElementById(scrollId).scrollTop = 0, [scrollId]);
 
-  scrollToTop = () => {
-    document.getElementById(this.props.scrollId).scrollTop = 0;
-  }
+  React.useEffect(() => {
+    scrollToTop()
+  }, [location.key, scrollToTop]);
 
-  componentDidUpdate(prevProps) {
-    if (this.props.location.key !== prevProps.location.key) {
-      this.scrollToTop()
-    }
-  }
+  return (
+    <ScrollContext.Provider value={scrollToTop}>
+      {children}
+    </ScrollContext.Provider>
+  );
+}
 
-  render() {
-    return (
-      <ScrollProvider value={this.scrollToTop}>
-        {this.props.children}
-      </ScrollProvider>
-    );
-  }
+ScrollToTop.propTypes = {
+  scrollId: PropTypes.string.isRequired
 }
 
 export default withRouter(ScrollToTop);

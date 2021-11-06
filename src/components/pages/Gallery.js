@@ -6,68 +6,65 @@ import services from '../../data/services';
 
 import './Gallery.scss';
 
-class Gallery extends React.Component {
-  state = {
-    selected: 0
-  }
+function Gallery() {
+  const [selected, setSelected] = React.useState(0);
 
-  prev = () => {
-    this.setState(({selected}) => {
-      if (selected <= 0) return {selected};
-      return {selected: selected - 1};
+  const prev = () => {
+    setSelected((selected) => {
+      if (selected <= 0) return selected;
+      return selected - 1;
     })
   }
 
-  next = () => {
-    this.setState(({selected}) => {
-      if (selected >= services.services.length - 1) return {selected};
-      return {selected: selected + 1};
+  const next = () => {
+    setSelected((selected) => {
+      if (selected >= services.services.length - 1) return selected;
+      return selected + 1;
     })
   }
 
-  render() {
-    const selectedService = services.services[this.state.selected];
-    return (
-      <div className='page page-gallery'>
-        <div className='gallery-wrapper'>
-          <div className='showcase'>
+  const selectedService = services.services[selected];
+
+  return (
+    <div className='page page-gallery'>
+      <div className='gallery-wrapper'>
+        <div className='showcase'>
+          <button 
+            className='no-style showcase-control left'
+            onClick={prev}
+          >
+            <FaChevronLeft />
+          </button>
+          <img 
+            className='showcase-image'
+            src={selectedService.image} 
+            alt={selectedService.name}
+          />
+          <button 
+            className='no-style showcase-control right'
+            onClick={next}
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+        <div className='image-selector'>
+          {services.services.map((service, key) => (
             <button 
-              className='no-style showcase-control left'
-              onClick={this.prev}
+              className='image-selector-item no-style' 
+              onClick={() => setSelected(key)}
+              key={key}
             >
-              <FaChevronLeft />
+              <img
+                className='image-selector-item-preview'
+                src={service.image}
+                alt={service.name}
+              />
             </button>
-            <img 
-              className='showcase-image'
-              src={selectedService.image} 
-              alt={selectedService.name}
-            />
-            <button 
-              className='no-style showcase-control right'
-              onClick={this.next}
-            >
-              <FaChevronRight />
-            </button>
-          </div>
-          <div className='image-selector'>
-            {services.services.map((service, key) => (
-              <button 
-                className='image-selector-item no-style' 
-                onClick={()=>this.setState({selected: key})}
-                key={key}
-              >
-                <img
-                  className='image-selector-item-preview'
-                  src={service.image}
-                  alt={service.name}
-                />
-              </button>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
-    )
-  }
+    </div>
+  );
 }
 
 export default Gallery;

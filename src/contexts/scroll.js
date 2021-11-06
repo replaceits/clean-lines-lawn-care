@@ -1,6 +1,5 @@
 import React from 'react';
 
-const { Consumer, Provider } = React.createContext();
+const ScrollContext = React.createContext();
 
-export const ScrollConsumer = Consumer;
-export const ScrollProvider = Provider;
+export default ScrollContext;

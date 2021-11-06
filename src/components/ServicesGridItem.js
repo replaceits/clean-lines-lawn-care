@@ -1,27 +1,24 @@
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import './ServicesGridItem.scss';
 
-class ServicesGridItem extends React.Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired
-  }
+function ServicesGridItem({image, name}) {
+  return (
+    <li 
+      className='services-grid-item' 
+      style={{backgroundImage: `url(${image})`}}
+    >
+      <div className='services-grid-item-overlay'>
+        {name}
+      </div>
+    </li>
+  );
+}
 
-  render() {
-    return (
-      <li 
-        className='services-grid-item' 
-        style={{backgroundImage: `url(${this.props.image})`}}
-      >
-        <div className='services-grid-item-overlay'>
-          {this.props.name}
-        </div>
-      </li>
-    )
-  }
+ServicesGridItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
 }
 
 export default ServicesGridItem;

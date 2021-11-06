@@ -9,19 +9,9 @@ import Pages from './Pages';
 import './ReviewsGrid.scss';
 import PageTurner from "./PageTurner";
 
-class ReviewsGrid extends React.Component {
-  static propTypes = {
-    itemsPerPage: PropTypes.number,
-    enablePages: PropTypes.bool
-  }
-
-  static defaultProps = {
-    itemsPerPage: 6,
-    enablePages: false
-  }
-
-  getSelectedReviews(page = 0) {
-    const selectedReviews = reviews.top(this.props.itemsPerPage, page);
+function ReviewsGrid({enablePages, itemsPerPage}) {
+  const getSelectedReviews = (page = 0) => {
+    const selectedReviews = reviews.top(itemsPerPage, page);
 
     const reviewsDOMLeft = [];
     const reviewsDOMRight = [];
@@ -34,7 +24,7 @@ class ReviewsGrid extends React.Component {
           author={selectedReviews[i].author}
           content={selectedReviews[i].content}
           stars={selectedReviews[i].stars}
-          key={(page * this.props.itemsPerPage) + i} 
+          key={(page * itemsPerPage) + i} 
         />
       );
     };
@@ -42,38 +32,46 @@ class ReviewsGrid extends React.Component {
     return {reviewsDOMLeft, reviewsDOMRight};
   }
 
-  render() {
-    return (
-      <Pages itemsPerPage={this.props.itemsPerPage} itemCount={reviews.reviews.length}>
-        {({page, maxPages, prev, next, goTo}) => {
-          const selectedReviews = this.getSelectedReviews(page);
+  return (
+    <Pages itemsPerPage={itemsPerPage} itemCount={reviews.reviews.length}>
+      {({page, maxPages, prev, next, goTo}) => {
+        const selectedReviews = getSelectedReviews(page);
 
-          return (
-            <div className='reviews-grid'>
-              <div className='reviews-wrapper'>
-                <ul className='reviews-container no-style left'>
-                  {selectedReviews.reviewsDOMLeft}
-                </ul>
-                <ul className='reviews-container no-style right'>
-                  {selectedReviews.reviewsDOMRight}
-                </ul>
-              </div>
-
-              {this.props.enablePages
-                ? <PageTurner 
-                    page={page} 
-                    maxPages={maxPages} 
-                    prev={prev} 
-                    next={next} 
-                    goTo={goTo}
-                  />
-                : null}
+        return (
+          <div className='reviews-grid'>
+            <div className='reviews-wrapper'>
+              <ul className='reviews-container no-style left'>
+                {selectedReviews.reviewsDOMLeft}
+              </ul>
+              <ul className='reviews-container no-style right'>
+                {selectedReviews.reviewsDOMRight}
+              </ul>
             </div>
-          );
-        }}
-      </Pages>
-    )
-  }
+
+            {enablePages
+              ? <PageTurner 
+                  page={page} 
+                  maxPages={maxPages} 
+                  prev={prev} 
+                  next={next} 
+                  goTo={goTo}
+                />
+              : null}
+          </div>
+        );
+      }}
+    </Pages>
+  );
+}
+
+ReviewsGrid.propTypes = {
+  itemsPerPage: PropTypes.number,
+  enablePages: PropTypes.bool
+}
+
+ReviewsGrid.defaultProps = {
+  itemsPerPage: 6,
+  enablePages: false
 }
 
 export default ReviewsGrid;

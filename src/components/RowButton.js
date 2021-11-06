@@ -1,44 +1,41 @@
 
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import './RowButton.scss';
 
-class RowButton extends React.Component {
-  static propTypes = {
-    noBG: PropTypes.bool,
-    to: PropTypes.string,
-    href: PropTypes.string
+function RowButton({to, href, onClick, noBG, children}) {
+  const userButton = (
+    <button className='row-button-button no-style'>
+      {children}
+    </button>
+  );
+
+  let buttonLink = null;
+
+  if (to) {
+    buttonLink = <Link to={to} className='no-style'>{userButton}</Link>;
+  } else if (href) {
+    buttonLink = <a href={href} className='no-style'>{userButton}</a>;
+  } else {
+    buttonLink = <div onClick={onClick} className='no-style'>{userButton}</div>
   }
 
-  static defaultProps = {
-    noBG: false
-  }
+  return (
+    <div className={`row-button ${noBG ? 'noBG' : ''}`}>
+      {buttonLink}
+    </div>
+  )
+}
 
-  render() {
-    const userButton = (
-      <button className='row-button-button no-style'>
-        {this.props.children}
-      </button>
-    );
+RowButton.propTypes = {
+  noBG: PropTypes.bool,
+  to: PropTypes.string,
+  href: PropTypes.string
+}
 
-    let buttonLink = null;
-
-    if (this.props.to) {
-      buttonLink = <Link to={this.props.to} className='no-style'>{userButton}</Link>;
-    } else if (this.props.href) {
-      buttonLink = <a href={this.props.href} className='no-style'>{userButton}</a>;
-    } else {
-      buttonLink = <div onClick={this.props.onClick} className='no-style'>{userButton}</div>
-    }
-
-    return (
-      <div className={`row-button ${this.props.noBG ? 'noBG' : ''}`}>
-        {buttonLink}
-      </div>
-    )
-  }
+RowButton.defaultProps = {
+  noBG: false
 }
 
 export default RowButton;

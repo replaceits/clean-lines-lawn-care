@@ -1,5 +1,4 @@
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import ServicesGridItem from './ServicesGridItem';
@@ -7,24 +6,22 @@ import services from '../data/services';
 
 import './ServicesGrid.scss';
 
-class ServicesGrid extends React.Component {
-  static propTypes = {
-    itemsPerPage: PropTypes.number
-  }
+function ServicesGrid({itemsPerPage}) {
+  return (
+    <ul className='services-grid no-style'>
+      {services.top(itemsPerPage).map((service, key) => (
+        <ServicesGridItem name={service.name} image={service.image} key={key} />
+      ))}
+    </ul>
+  )
+}
 
-  static defaultProps = {
-    itemsPerPage: 6
-  }
+ServicesGrid.propTypes = {
+  itemsPerPage: PropTypes.number
+}
 
-  render() {
-    return (
-      <ul className='services-grid no-style'>
-        {services.top(this.props.itemsPerPage).map((service, key) => (
-          <ServicesGridItem name={service.name} image={service.image} key={key} />
-        ))}
-      </ul>
-    )
-  }
+ServicesGrid.defaultProps = {
+  itemsPerPage: 6
 }
 
 export default ServicesGrid;

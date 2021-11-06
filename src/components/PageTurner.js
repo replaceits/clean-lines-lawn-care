@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ScrollConsumer } from '../contexts/scroll';
+import ScrollContext from '../contexts/scroll';
 
 import './PageTurner.scss';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
@@ -43,7 +43,7 @@ class PageTurner extends React.Component {
   render() {
     return (
       <div className='page-turner'>
-        <ScrollConsumer>
+        <ScrollContext.Consumer>
           {scrollToTop => (
             <React.Fragment>
               <button
@@ -71,7 +71,7 @@ class PageTurner extends React.Component {
               </button>
             </React.Fragment>
           )}
-        </ScrollConsumer>
+        </ScrollContext.Consumer>
       </div>
     )
   }
